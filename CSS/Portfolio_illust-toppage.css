@@ -1,0 +1,376 @@
+html {
+  font-size: 20px;
+  letter-spacing: .02em;
+  scroll-behavior: smooth;
+  background-color: #444444;
+}
+
+body{
+  margin: 0%;
+  width: 100vw;
+}
+
+
+/* レスポンシブ対応 */
+div.base{
+  max-width: 500px;
+  width: 100vw;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+
+section.gallery{
+  position: relative;
+  background-color: #000000;
+  z-index: 1;
+}
+
+section.gallery h1.gallery-text{
+  z-index: 1;         /* レイヤーの順番指定。文字は一番上に欲しいので10 */
+  font-family:  'Anton', sans-serif;
+  color: #ffff00;
+  font-size: 80px;
+
+  display: flex;
+  justify-content: end;
+  
+  margin: 0%;
+  padding: 5%;
+  
+}
+
+/* ボタン */
+figure.gallery-icon{
+  margin: 0;
+  position: relative;
+  z-index: 10;
+}
+
+a{
+  text-decoration:none; /*リンクの下線を消す*/
+}
+
+h1.icon-text{
+  font-family:  'Anton', sans-serif;
+  font-size:40px;
+  position: absolute;
+  margin: 72px;
+  margin-left: 10%;
+  color: #ffffff;
+  z-index: 15;
+}
+
+img.icon-cut{
+  clip-path: polygon(0 20%, 100% 0%, 100% 80%, 0% 100%);
+  height: 200px;
+  width: 100%;
+  object-fit: cover;
+  filter: brightness(0.5);
+
+  margin: 0%;
+  z-index: 7;
+}
+
+/* BACKボタン */
+div.back-button{
+  background-color: #ffff00;
+}
+
+.back{
+  z-index: 15;         /* レイヤーの順番指定。文字は一番上に欲しいので10 */
+  font-family:  'Anton', sans-serif;
+  font-size: 20px;
+  align-items: center;
+  margin-left: 5%;   
+  max-width: 200px;
+  padding: 10px 10px;
+  text-decoration:none; /*リンクの下線を消す*/
+  background: #eee;
+  position: relative;
+  display: flex;
+  justify-content: space-around;
+  color: #313131;
+  transition: 0.3s ease-in-out;
+  font-weight: 500;
+}
+
+.back:after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  bottom: 0;
+  left: 2rem;
+  font-size: 90%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: right 0.3s;
+  width: 6px;
+  height: 6px;
+  border-bottom: solid 2px currentColor;
+  border-left: solid 2px currentColor;
+  transform: translateY(-50%) rotate(45deg);
+}
+
+.back:hover {
+  background: #ffff00;
+  color: rgb(0, 0, 0);
+}
+.back:hover:after {
+  right: 1.4rem;
+}
+
+/*格子*/
+.lattice-position{
+  position: absolute;
+  display: flex;
+  justify-content: flex-end;
+  width: 100%;
+  height: 100%;
+  margin-top: 55%;
+  z-index: 1;
+}
+.lattice-line{
+  position: absolute;
+  display: block;
+  z-index: 15;
+}
+
+/* 横線 */
+.lattice-line.side{
+  padding-top: 2%;
+}
+.side-line{
+  border-top :none;
+  border-top :solid #ffff00;
+  border-width: thin;
+  width: 360px;       /*線の横幅*/
+  height: 30px;       /*線の間隔*/
+}
+
+/* 縦線 */
+.lattice-line.vertical{
+  display: flex;
+  margin-right: 5%;
+}
+.vertical-line{
+  border-top :none;
+  border-right :solid #ffff00;
+  border-width: thin;
+  width: 30px;       /*線の横幅*/
+  height: 360px;       /*線の間隔*/
+}
+
+/* 斜め */
+/* 疑似要素 */
+.content01.white-under{
+  position: relative;
+  height: 80px;
+  width: 100%;
+  background-color: #000000;
+}
+/* 疑似要素 */
+.content01.white-under::after {
+  content: '';
+  display: block;
+  position: absolute;
+  left:0;
+  bottom: 0;
+  border-top: 250px solid transparent;   
+  border-left: min(50vw, 250px) solid #ffff00;  
+  border-right: min(50vw, 250px) solid  transparent;   
+  border-bottom: 250px solid #ffff00;  
+}
+
+
+/* menuボタン */
+/* メニューの設定 */
+.menu-btn {
+  position: fixed;
+  top: 10px;
+  margin-left: 10px;
+  display: flex;
+  height: 60px;
+  width: 60px;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  background-color: #000000;
+  padding: 0;
+}
+.menu-btn span,
+.menu-btn span:before,
+.menu-btn span:after {
+  content: '';
+  display: block;
+  height: 3px;
+  width: 25px;
+  border-radius: 3px;
+  background-color: #ffffff;
+  position: absolute;
+}
+.menu-btn span:before {
+  bottom: 8px;
+}
+.menu-btn span:after {
+  top: 8px;
+}
+
+#menu-btn-check:checked ~ .menu-btn span {
+background-color: rgba(255, 255, 255, 0);/*メニューオープン時は真ん中の線を透明にする*/
+}
+#menu-btn-check:checked ~ .menu-btn span::before {
+bottom: 0;
+transform: rotate(45deg);
+}
+#menu-btn-check:checked ~ .menu-btn span::after {
+top: 0;
+transform: rotate(-45deg);
+}
+
+
+#menu-btn-check {
+  display: none;
+}
+
+#menu-btn-check {
+  display: none;
+}
+
+.menu-content {
+width: 100%;
+height: 100%;
+position: fixed;
+top: 0;
+left: 0;
+z-index: 1000;
+background-color: #000000;
+}
+.menu-content ul {
+padding: 70px 10px 0;
+}
+.menu-content ul li {
+border-bottom: solid 1px #ffffff;
+list-style: none;
+}
+.menu-content ul li a {
+display: block;
+width: 100%;
+font-size: 30px;
+font-family:  'Anton', sans-serif;
+box-sizing: border-box;
+color:#000000;
+text-decoration: none;
+padding: 9px 15px 10px 0;
+position: relative;
+}
+.menu-content ul li a::before {
+content: "";
+width: 7px;
+height: 7px;
+border-top: solid 2px #000000;
+border-right: solid 2px #000000;
+transform: rotate(45deg);
+position: absolute;
+right: 11px;
+top: 26px;
+}
+
+.menu-content {
+width: 100%;
+height: 100%;
+position: fixed;
+top: 0;
+left: 100%;/*leftの値を変更してメニューを画面外へ*/
+z-index: 900;
+background-color: #ffff00;
+transition: all 0.5s;/*アニメーション設定*/
+}
+
+
+#menu-btn-check:checked ~ .menu-content {
+  left: 0;/*メニューを画面内へ*/
+}
+
+/* 横幅1000px以上の場合 */
+@media screen and (min-width:1000px) {
+  
+  figure.top-section{
+    z-index: 8;
+    overflow-x: hidden;
+    display: block;
+    margin: 0%;
+    position: relative; /*親要素をrelativeにすると子要素のabsoluteで範囲共有できる */
+    background-color: #ffff00;
+  } 
+
+  /* メニューボタン */
+  /* メニューの設定 */
+  .menu-btn {
+    display: none;
+  }
+
+  #menu-btn-check {
+    display: none;
+  }
+
+  #menu-btn-check {
+    display: none;
+  }
+
+  .menu-content {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  background-color: #000000;
+  }
+  .menu-content ul {
+  padding: 70px 10px 0;
+  }
+  .menu-content ul li {
+  border-bottom: solid 1px #ffffff;
+  list-style: none;
+  }
+  .menu-content ul li a {
+  display: block;
+  width: 80%;
+  font-size: 30px;
+  font-family:  'Anton', sans-serif;
+  box-sizing: border-box;
+  color:#000000;
+  text-decoration: none;
+  padding: 9px 15px 10px 0;
+  position: relative;
+  }
+  .menu-content ul li a::before {
+  content: "";
+  width: 7px;
+  height: 7px;
+  border-top: solid 2px #000000;
+  border-right: solid 2px #000000;
+  transform: rotate(45deg);
+  position: absolute;
+  right: 11px;
+  top: 31px;
+  }
+
+  .menu-content {
+  width: 30%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0%;/*leftの値を変更してメニューを画面外へ*/
+  z-index: -5;
+  background-color: #ffff00;
+  
+  }
+
+
+  #menu-btn-check:checked ~ .menu-content {
+    left: 0%;/*メニューを画面内へ*/
+  }
+}

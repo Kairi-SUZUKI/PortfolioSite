@@ -1,0 +1,614 @@
+/* TOP */
+figure.top-section{
+  z-index: 11;
+  overflow-x: hidden;
+  display: block;
+  margin: 0%;
+  position: relative; /*親要素をrelativeにすると子要素のabsoluteで範囲共有できる */
+  background-color: #ffff00;
+} 
+
+
+/* Topの文字の指定 */
+figure div.top-text{
+  /* トップ画面のテキストを画像の上に被せる指定 */
+  position: absolute; /* 全部無視して左上に移動 */
+  z-index: 3;         /* レイヤーの順番指定。文字は一番上に欲しいので3 */
+  width: 100%;
+  height: 100%;
+
+  /* 文字の位置指定 */
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+  justify-content: center;
+
+}
+
+/* 文字の指定 */
+figure div.top-text h1{
+  font-family: 'Anton', sans-serif;
+  font-size: 70px;
+  margin: 0;
+  margin-left: 5px;
+
+  font-weight:lighter;
+  color:rgba(0,0,0);
+  text-align:center;
+   -webkit-text-stroke: 1px rgb(255, 255, 255);
+}
+
+/* Topイラストの指定 */
+div.top-center{
+  display: flex;
+  justify-content: center;
+  overflow: hidden;
+  position: relative;
+}
+
+img.Top-illust{
+  width: 160%;
+  height: auto;
+  z-index: 2;      /* レイヤーの順番指定。文字より下なので2 */
+}
+
+
+/* アニメーション用 */
+.cover1,
+.cover2,
+.cover3 {
+  animation: cover 1s cubic-bezier(.4, 0, .2, 1) forwards;
+  background: rgb(0, 0, 0);
+  height: calc(100%/3);
+  left: 0;
+  pointer-events: none;
+  position: absolute;
+  right: 0;
+  z-index: 5;
+}
+
+.cover1 {
+  top: 0;
+}
+
+.cover2 {
+  animation-delay: .2s;
+  top: calc(100%/3);
+}
+
+.cover3 {
+  animation-delay: .4s;
+  top: calc(100%/3*2);
+}
+
+@keyframes cover {
+  100% {
+    transform: translateX(100%);
+  }
+}
+/* TOP fin */
+
+/* Gallery */
+/* 背景部分の準備 */
+.content {
+  z-index: 10;
+  overflow: hidden; /* はみ出た部分は表示しない */
+  position: relative;
+}
+.content01{
+  position: relative;
+  height: 150px;
+  width: 100%;
+  background-color: #ffff00;
+  z-index: 10;
+}
+
+.content02 {
+  position: relative;
+  width: 100%;
+  background-color: #000000;  
+  z-index: 10;
+}
+
+/* 疑似要素 */
+.content01::after {
+  content: '';
+  display: block;
+  position: absolute;
+  left:0;
+  bottom: 0;
+  border-top: 60px solid transparent;   
+  border-left: min(50vw, 250px) solid transparent;   
+  border-right: min(50vw, 250px) solid #000000;   
+  border-bottom: 60px solid #000000;  
+}
+
+div.title-format{
+  z-index: 10;         /* レイヤーの順番指定。文字は一番上に欲しいので10 */
+  font-family:  'Anton', sans-serif;
+  font-size: 50px;
+  margin: 5%;
+  margin-top: 0%;
+  padding: 0%;
+
+  position: relative;
+}
+
+h1.Gallery{
+  color:#ffffff;
+  font-weight:lighter;
+  margin: 0%;
+  z-index: 100;
+
+  
+  /* 重ねる準備 */
+  position: absolute; /* 全部無視して左上に移動 */
+  width: 100%;
+  height: 100%;
+
+  /* 位置指定 */
+  display: flex;
+  justify-content: flex-end;
+}
+
+h1.under2{
+  margin: 0%;
+  z-index: 100;
+
+  /* 重ねる準備 */
+  position: absolute; /* 全部無視して左上に移動 */
+  width: 100%;
+  height: 100%;
+
+  /* 位置指定 */
+  padding-top: 10px;
+  display: flex;
+  justify-content: flex-end;
+
+  /* 縁取りの指定 */
+  font-weight:lighter;
+  color:rgba(0, 0, 0, 0);
+  text-align:center;
+   -webkit-text-stroke: 0.5px rgb(255, 255, 255);
+}
+
+h1.under1{
+  margin: 0%;
+  z-index: 100;
+
+  /* 重ねる準備 */
+  width: 100%;
+  height: 100%;
+
+  /* 位置指定 */
+  padding-top: 20px;
+  display: flex;
+  justify-content: flex-end;
+
+  /* 縁取りの指定 */
+  font-weight:lighter;
+  color:rgba(0,0,0,.0);
+  text-align:center;
+   -webkit-text-stroke: 0.5px rgb(255, 255, 255);
+}
+
+/* 画像 */
+/* 画像の位置指定 */
+figure.gallery{
+  position: relative;
+  z-index: 5;  /* レイヤーの順番指定。真ん中らへんの層*/
+  margin:5%;
+  margin-bottom: 0%;
+}
+figure.gallery img{
+  width: 70%;
+  margin-bottom: 20%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  /* 画像後ろの箱をshadowで指定 */
+  box-shadow: 10px 6px;
+  color: #272727;
+}
+/* 二つ目の画像の位置指定 */
+figure.gallery img.img-opposite{
+ margin-left: 25%;
+}
+
+/* 背景素材 */
+/* 下向き三角形 */
+/* 三角形を並べる */
+.triangle-line{
+  position: absolute;
+  width: 100%;
+  margin: 0%;
+  margin-top: 7%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+/* 三角形の書式指定 */
+.equilateral-triangle {
+  z-index: 1;  /* レイヤーの順番指定。一番下*/
+  display: block;
+  /* 縁取り。drop-shadowで表現 */
+  /* drop-shadow(左右の位置px 上下の位置px ぼかし具合px 色) */
+  filter: drop-shadow(1px 1px 0px rgb(255, 255, 255)) /*右辺*/
+          drop-shadow(-1px 1px 0px rgb(255, 255, 255)) /*左辺*/ 
+          drop-shadow(0px -1px 0px rgb(255, 255, 255));/*上辺*/
+  margin: 5%;
+  margin-right: 8%;
+  width: 0;
+  height: 0;
+  border-top: 69.282px solid #000000;
+  border-right: 40px solid transparent;
+  border-left: 40px solid transparent; 
+}
+
+/* TOP画像の三角形 */
+figure.top-section div.triangle-line-white{
+  position: absolute;
+  width: 100%;
+  margin: 0%;
+  margin-top: 10%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+/* 三角形の書式指定 */
+figure.top-section div.triangle-line-white div.equilateral-triangle {
+  z-index: 1;  /* レイヤーの順番指定。一番下*/
+  display: block;
+  margin: 5%;
+  width: 0;
+  height: 0;
+  border-top: 51.961px solid #000000;
+  border-right: 30px solid transparent;
+  border-left: 30px solid transparent; 
+  filter: none;
+}
+
+/*格子*/
+.lattice-position{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  margin-top: 115%;
+  z-index: 5;
+}
+.lattice-line{
+  position: absolute;
+  display: block;
+}
+
+/* 横線 */
+.lattice-line.side{
+  padding-top: 2%;
+}
+.side-line{
+  border-top :none;
+  border-top :solid #ffff00;
+  border-width: thin;
+  width: 360px;       /*線の横幅*/
+  height: 30px;       /*線の間隔*/
+}
+
+/* 縦線 */
+.lattice-line.vertical{
+  display: flex;
+}
+.vertical-line{
+  border-top :none;
+  border-right :solid #ffff00;
+  border-width: thin;
+  width: 30px;       /*線の横幅*/
+  height: 360px;       /*線の間隔*/
+}
+
+
+/* MOREボタン */
+.more-button a {
+  z-index: 10;         /* レイヤーの順番指定。文字は一番上に欲しいので10 */
+  font-family:  'Anton', sans-serif;
+  font-size: 20px;
+  align-items: center;
+  margin-left: auto;   
+  margin-right: 5%;
+  max-width: 200px;
+  padding: 10px 10px;
+  text-decoration:none; /*リンクの下線を消す*/
+  background: #eee;
+  position: relative;
+  display: flex;
+  justify-content: space-around;
+  color: #313131;
+  transition: 0.3s ease-in-out;
+  font-weight: 500;
+}
+
+.more-button a:after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  bottom: 0;
+  right: 2rem;
+  font-size: 90%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: right 0.3s;
+  width: 6px;
+  height: 6px;
+  border-top: solid 2px currentColor;
+  border-right: solid 2px currentColor;
+  transform: translateY(-50%) rotate(45deg);
+}
+
+.more-button a:hover {
+  background: #ffff00;
+  color: rgb(0, 0, 0);
+}
+.more-button a:hover:after {
+  right: 1.4rem;
+}
+
+/* 下の三角形 */
+.content01.under{
+  position: relative;
+  height: 150px;
+  width: 100%;
+  background-color: #000000;
+}
+/* 疑似要素 */
+.content01.under::after {
+  content: '';
+  display: block;
+  position: absolute;
+  left:0;
+  bottom: 0;
+  border-top: 60px solid transparent;   
+  border-left: min(50vw, 250px) solid transparent;   
+  border-right: min(50vw, 250px) solid #ffff00;   
+  border-bottom: 60px solid #ffff00;  
+}
+/* Gallery fin */
+
+/* Profile */
+/* セクションの背景色 */
+section.profile{
+  position: relative;
+  background-color: #ffff00;
+  height: 330px;
+  z-index: 10;
+}
+/* 見出し */
+div.title-format.profile{
+  margin-bottom: 0%;
+}
+
+h1.Profile-title{
+  z-index: 15;
+  color:#000000;
+  font-weight:lighter;
+  margin: 0%;
+  
+  font-size: 1.5em;
+
+  
+  /* 重ねる準備 */
+  position: absolute; /* 全部無視して左上に移動 */
+  width: 100%;
+
+  /* 位置指定 */
+  display: flex;
+}
+
+h1.p-under2{
+  z-index: 5;
+  margin: 0%;
+  font-size: 1.5em;
+
+  /* 重ねる準備 */
+  position: absolute; /* 全部無視して左上に移動 */
+  width: 100%;
+
+  /* 位置指定 */
+  padding-top: 10px;
+  display: flex;
+
+  /* 縁取りの指定 */
+  font-weight:lighter;
+  color:#ffff00;
+  text-align:center;
+   -webkit-text-stroke: 0.5px rgb(0, 0, 0);
+}
+
+h1.p-under1{
+  z-index: 1;
+  margin: 0%;
+  font-size: 1.5em;
+
+  /* 重ねる準備 */
+  width: 100%;
+  height: 100%;
+
+  /* 位置指定 */
+  padding-top: 20px;
+  display: flex;
+
+  /* 縁取りの指定 */
+  font-weight:lighter;
+  color:#ffff00;
+  text-align:center;
+   -webkit-text-stroke: 0.5px rgb(0, 0, 0);
+}
+
+/* プロフィールの中身 */
+figure.profile-contents{
+  position: relative;
+  margin: 0% 5%;
+  height: 120px;
+  z-index: 5;
+}
+
+/* 名前、アイコンをブロック化 */
+figure.profile-contents div.content-box{
+  display: block;
+  position:absolute; 
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 50%;
+}
+
+/* 名前の文字の指定 */
+/* 漢字の方の処理 */
+p.name-ja{
+  font-family: 'Dela Gothic One', cursive;
+  font-size: 35px;
+  margin:0;
+}
+
+/* ローマ字の方の処理 */
+p.name-ro{
+  font-family:  'Anton', sans-serif;
+  letter-spacing: 5px;  /* 字間の指定 */
+  font-size: 15px;
+  margin: 0%;
+}
+
+
+/* アイコンの円形化 */
+.CircleClip {
+  border-radius: 50%;
+  width: 80%;
+}
+
+/* 本文 */
+/* 本文のボックス化 */
+figure.profile-contents div.text-box{
+  display: block;
+  position:absolute; 
+  margin-left:50%;
+  margin-top: 15%;
+}
+/* Gallery fin */
+
+/* contact上の斜め */
+/* 上の白斜め作る */
+.content01.white{
+  position: relative;
+  height: 100px;
+  z-index: 9;
+}
+/* 疑似要素 */
+.content01.white::after {
+  z-index: 10;
+  content: '';
+  display: block;
+  position: absolute;
+  right: 0;
+  border-top: 40px solid transparent;   
+  border-left: min(50vw, 250px) solid transparent;   
+  border-right: min(50vw, 250px) solid #ffffff;   
+  border-bottom: 40px solid #ffffff;  
+}
+/* 下の白黒境界を作る */
+.content01.white-under{
+  position: relative;
+  height: 90px;
+  width: 100%;
+  background-color: #ffffff;
+}
+/* 疑似要素 */
+.content01.white-under::after {
+  content: '';
+  display: block;
+  position: absolute;
+  left:0;
+  bottom: 0;
+  border-top: 30px solid transparent;   
+  border-left: min(50vw, 250px) solid #000000;  
+  border-right: min(50vw, 250px) solid  transparent;   
+  border-bottom: 30px solid #000000;  
+}
+
+/* Contact */
+/* タイトルの書式調整 */
+.title-format.contact{
+  color: #ffffff;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 10%;
+  z-index: 10;
+}
+
+/*アンダーライン*/
+/*疑似要素をやってみようの会*/
+.title-format.contact::after{
+  content:""; /*疑似要素ではcontentは必須*/
+  z-index: 10;
+  background-color: #ffffff;
+  position: absolute;
+  width: 60%;
+  height: 2%;
+  bottom: 0;
+}
+
+/* テキストの書式調整 */
+p.text.white{
+  color: #ffffff;
+  text-align: center; /*テキストの中央寄せ*/
+}
+
+/* アイコンの処理 */
+figure.service{
+  display: flex;
+  justify-content: center;
+  margin-bottom: 0%;
+}
+a.icon{
+  width: 20%;
+  margin: 10%;
+}
+
+/* フォームの整形 */
+form{
+  font-family: 'Sawarabi Gothic', sans-serif;
+  margin: 10%;
+  margin-top: 5%;
+  margin-bottom: 0%;
+  padding-bottom: 10%;
+}
+label{
+  color: #ffffff;
+  display: flex;
+  padding-top:5%;
+}
+
+input{
+  height: 20px;
+  border-radius: 5px;
+
+}
+textarea{
+  width: 100%;
+  height: 100px;
+  border-radius: 10px;
+}
+button{
+  display: flex;
+
+  border-radius: 5px;
+  color: #000000;
+  font-family: 'Sawarabi Gothic', sans-serif;
+  font-size: 15px;
+
+  margin-top: 5%;
+  margin-left: 42%;
+  padding: 2%;
+  padding-left: 5%;
+  padding-right: 5%;
+  
+}
