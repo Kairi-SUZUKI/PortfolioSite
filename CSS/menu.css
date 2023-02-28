@@ -39,6 +39,12 @@ html {
     font-size: 12px;
     margin: 0%;
   }
+
+  /* ハーフトーンの基本設定 */
+  img.helftone{
+    position: absolute;
+    
+  }
   
   /* メニューボタン */
   /* メニューの設定 */

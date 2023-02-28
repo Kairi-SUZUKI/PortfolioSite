@@ -52,6 +52,26 @@ img.Top-illust{
   z-index: 2;      /* レイヤーの順番指定。文字より下なので2 */
 }
 
+/* ハーフトーンの指定 */
+.top-herftone{
+  transform: rotate(-10deg);
+  margin-top: 910px;
+  margin-left: -65px;
+  z-index: 15;
+}
+
+.gallery-herftone{
+  transform: rotate(-180deg);
+  z-index: 11;
+  margin: 0;
+  width: 100%;
+}
+
+div.box{
+  background-color: #ffff00;
+  padding: 50px;
+}
+
 
 /* アニメーション用 */
 .cover1,
@@ -222,7 +242,6 @@ figure.gallery img.img-opposite{
   position: absolute;
   width: 100%;
   margin: 0%;
-  margin-top: 7%;
   display: flex;
   flex-direction: column;
   align-items: flex-end;
