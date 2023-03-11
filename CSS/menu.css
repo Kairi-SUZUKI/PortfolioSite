@@ -96,9 +96,7 @@ img.helftone{
     display: none;
 }
 
-#menu-btn-check {
-    display: none;
-}
+
 
 .menu-content {
   width: 100%;
@@ -170,11 +168,6 @@ img.helftone{
   /* メニューボタン */
   /* メニューの設定 */
   .menu-btn {
-    display: none;
-  }
-
-
-  #menu-btn-check {
     display: none;
   }
 
