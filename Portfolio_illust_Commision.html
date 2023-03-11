@@ -4,10 +4,10 @@
     <title>Suzuki Kairi-Portfolio</title>
     <meta name="description" content="鈴木乖離のポートフォリオサイト" />
     <!-- CSSの指定 -->
-    <link rel="stylesheet" href="CSS/Portfolio_illust-toppage.css">   
-    <link rel="stylesheet" href="CSS/menu.css">
-    <!-- resetCSS -->
+    <link rel="stylesheet" href="CSS/Portfolio_illust-MyCharacter.css">
     <link rel="stylesheet" href="reset.css">
+    <link rel="stylesheet" href="CSS/head-design.css">
+    <link rel="stylesheet" href="CSS/menu.css">
     <meta charset="UTF-8">                                <!-- 文字コード指定 -->
     <meta name="viewport" content="width=device-width">   <!-- レスポンシブ対応 -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -30,6 +30,46 @@
   </head>
 
   <body>
+    <img class="background-pic" src="img/back-ground.png">
+    <div class="base">
+      <!-- メニューボタン -->
+      <div class="hamburger-menu">
+        <input type="checkbox" id="menu-btn-check">
+        <label for="menu-btn-check" class="menu-btn"><span></span></label>
+        <!--ここからメニュー-->
+        <div class="menu-content">
+            <ul>
+              <li>
+                <a href="index.html#">TOP</a>
+              </li>
+              <li>
+                  <a href="index.html#gallery">GALLERY</a>
+              </li>
+              <li>
+                <a href="Portfolio_illust_MyCharacter.html">　-MY CHARACTERS</a>
+              </li>
+              <li>
+                <a href="Portfolio_illust_FreeArt.html">　-FREE ART</a>
+              </li>
+              <li>
+                <a href="Portfolio_illust_Commision.html">　-COMMSSION</a>
+              </li>
+              <li>
+                <a href="Portfolio_illust_FanArt.html">　-FAN ART</a>
+              </li>
+              <li>
+                  <a href="index.html#profile">PROFILE</a>
+              </li>
+              <li>
+                <a href="index.html#contact">CONTACT</a>
+              </li>
+            </ul>
+        </div>
 
+        <figure class="gallery-icon">
+          <h1 class="icon-text">COMMISSION</h1>
+          <img class="icon-cut" src="img/sample7.png">
+        </figure>
+    </div>
   </body>
 </html>

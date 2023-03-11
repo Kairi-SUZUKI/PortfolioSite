@@ -187,5 +187,13 @@ div.back-button{
 
 div.box{
   background-color: #ffff00;
-  padding: 50px;
+  padding: 0;
+  height: 100px;
+}
+
+/* ハーフトーンの指定 */
+.under-herftone{
+  z-index: 15;
+  width: 100%;
+  position: absolute;
 }
