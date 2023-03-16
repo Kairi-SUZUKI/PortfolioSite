@@ -9,10 +9,9 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <!-- CSSの指定 -->
     <link rel="stylesheet" href="CSS/top-page.css">   
-    <link rel="stylesheet" href="CSS/menu.css">
+    <link rel="stylesheet" href="CSS/menu-toppage.css">
     <!-- resetCSS -->
     <link rel="stylesheet" href="reset.css">
-    <link rel="stylesheet" href="humberger.js">
     <!-- フォント：TOP -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -38,41 +37,43 @@
     <div class="base">
       
       <figure class="top-section"><a name="head"></a>
-        <!-- メニューボタン -->
-        <div class="hamburger-menu">
-          <input type="checkbox" id="menu-btn-check">
-          <label for="menu-btn-check" class="menu-btn"><span></span></label>
-          <!--ここからメニュー-->
-          <div class="menu-content">
 
-              <ul>
-                  <li>
-                      <a href="#">TOP</a>
-                  </li>
-                  <li>
-                      <a href="#gallery">GALLERY</a>
-                  </li>
-                  <li>
-                    <a href="Portfolio_illust_MyCharacter.html">　-MY CHARACTERS</a>
-                  </li>
-                  <li>
-                    <a href="Portfolio_illust_FreeArt.html">　-FREE ART</a>
-                  </li>
-                  <li>
-                    <a href="Portfolio_illust_Commision.html">　-COMMSSION</a>
-                  </li>
-                  <li>
-                    <a href="Portfolio_illust_FanArt.html">　-FAN ART</a>
-                  </li>
-                  <li>
-                      <a href="#profile">PROFILE</a>
-                  </li>
-                  <li>
-                    <a href="#contact">CONTACT</a>
-                  </li>
-              </ul>
-          </div>
+        <!-- メニューボタン -->
+        <div class="hamburger-menu" id="js-hamburger">
+      
+          <label for="menu-btn-check" class="menu-btn"><span></span></label>
         </div>
+
+        <!--ここからメニュー-->
+        <div class="menu-content" id="js-nav">
+            <ul>
+                <li>
+                    <a href="#" id="js-tp">TOP</a>
+                </li>
+                <li>
+                    <a href="#gallery" id="js-gall">GALLERY</a>
+                </li>
+                <li>
+                  <a href="Portfolio_illust_MyCharacter.html" >　-MY CHARACTERS</a>
+                </li>
+                <li>
+                  <a href="Portfolio_illust_FreeArt.html">　-FREE ART</a>
+                </li>
+                <li>
+                  <a href="Portfolio_illust_Commision.html">　-COMMSSION</a>
+                </li>
+                <li>
+                  <a href="Portfolio_illust_FanArt.html">　-FAN ART</a>
+                </li>
+                <li>
+                    <a href="#profile" id="js-pro">PROFILE</a>
+                </li>
+                <li>
+                  <a href="#contact" id="js-con">CONTACT</a>
+                </li>
+            </ul>
+        </div>
+        <script src="JS/humberger.js" type="application/javascript"></script>
 
         <div class="triangle-line-white">
           <div class="equilateral-triangle"></div>
